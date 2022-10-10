@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Client>
+@{
+    ViewData["Title"] = "Client";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Client</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Client" asp-action="Create" class="btn btn-primary">Create</a>
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped" style="width:100%;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>CCode</th>
+            <th>AccountId</th>
+            <th>CompanyName</th>
+            <th>ContactPerson</th>
+            <th>MobileNo</th>
+            <th>PhoneNo</th>
+            <th>CNIC</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>NTN</th>
+            <th>Credit</th>
+            <th>Debit</th>
+            <th>Balance</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.ClientId</td>
+                <td>@obj.CCode</td>
+                <td>@obj.AccountId</td>
+                <td>@obj.CompanyName</td>
+                <td>@obj.ContactPerson</td>
+                <td>@obj.MobileNo</td>
+                <td>@obj.PhoneNo</td>
+                <td>@obj.CNIC</td>
+                <td>@obj.Address</td>
+                <td>@obj.Email</td>
+                <td>@obj.NTN</td>
+                <td>@obj.Credit</td>
+                <td>@obj.Debit</td>
+                <td>@obj.Balance</td>
+                <td>@obj.Status</td>
+                <td>
+                <div class="w-75 btn-group" role="group">
+                    <a asp-controller="Client" asp-action="Edit" asp-route-id="@obj.ClientId">Edit</a>&nbsp;|&nbsp;<form asp-controller="Client" asp-action="DeletePost" asp-route-id="@obj.ClientId" method="post"><a onclick="this.parentElement.submit()" class="text-danger" style="text-decoration:underline;" id="customDeletebtn">Delete</a></form>
+                </div>
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>

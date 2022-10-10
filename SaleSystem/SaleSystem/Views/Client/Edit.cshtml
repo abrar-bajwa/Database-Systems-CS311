@@ -1,0 +1,94 @@
+﻿@model Client
+
+<div class="container" style="width:50%;">
+    <form method="post" asp-action="Edit"> 
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2>
+                    Edit Client Details
+                </h2>
+                <hr />
+            </div>
+             <input type="hidden" name="clientid" value="@Model.ClientId" />
+            <div asp-validation-summary="All" style="list-style:None;" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="CCode"></label>
+                <input asp-for="CCode" class="form-control"/>
+                <span asp-validation-for="CCode" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="AccountId"></label>
+                <input asp-for="AccountId" class="form-control"/>
+                <span asp-validation-for="AccountId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CompanyName"></label>
+                <input asp-for="CompanyName" class="form-control"/>
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+             <div class="mb-3">
+                <label asp-for="ContactPerson"></label>
+                <input asp-for="ContactPerson" class="form-control"/>
+                <span asp-validation-for="ContactPerson" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="MobileNo"></label>
+                <input asp-for="MobileNo" class="form-control"/>
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PhoneNo"></label>
+                <input asp-for="PhoneNo" class="form-control"/>
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CNIC"></label>
+                <input asp-for="CNIC" class="form-control"/>
+                <span asp-validation-for="CNIC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" class="form-control"/>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NTN"></label>
+                <input asp-for="NTN" class="form-control"/>
+                <span asp-validation-for="NTN" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Credit"></label>
+                <input asp-for="Credit" class="form-control"/>
+                <span asp-validation-for="Credit" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Debit"></label>
+                <input asp-for="Debit" class="form-control"/>
+                <span asp-validation-for="Debit" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Balance"></label>
+                <input asp-for="Balance" class="form-control"/>
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Status"></label>
+                <input asp-for="Status" class="form-control"/>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-controller="Client" asp-action="Index" class="btn btn-primary">Back</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
